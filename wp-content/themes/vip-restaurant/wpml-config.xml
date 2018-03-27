@@ -1,0 +1,17 @@
+<wpml-config>
+    <custom-types>
+        <custom-type translate="1">portfolio</custom-type>
+    </custom-types>
+    <taxonomies>
+        <taxonomy translate="1">portfolio_category</taxonomy>
+    </taxonomies>
+    <admin-texts>
+        <key name="vamtam_credits" />
+        <key name="vamtam_header-text-main" />
+        <key name="vamtam_mobile-top-bar" />
+        <key name="vamtam_phone-num-top" />
+        <key name="vamtam_related-portfolios-title" />
+        <key name="vamtam_related-posts-title" />
+        <key name="vamtam_top-bar-text" />
+    </admin-texts>
+</wpml-config>

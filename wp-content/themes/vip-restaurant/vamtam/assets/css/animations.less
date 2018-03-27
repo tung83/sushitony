@@ -1,0 +1,123 @@
+@keyframes flash {
+	0%, 50%, 100% {opacity: 1;}
+
+	25%, 75% {opacity: 0;}
+}
+
+@keyframes wiggle {
+	0% { transform: skewX(9deg); }
+
+	10% { transform: skewX(-8deg); }
+
+	20% { transform: skewX(7deg); }
+
+	30% { transform: skewX(-6deg); }
+
+	40% { transform: skewX(5deg); }
+
+	50% { transform: skewX(-4deg); }
+
+	60% { transform: skewX(3deg); }
+
+	70% { transform: skewX(-2deg); }
+
+	80% { transform: skewX(1deg); }
+
+	90% { transform: skewX(0deg); }
+
+	100% { transform: skewX(0deg); }
+}
+
+.animated {
+	animation-timing-fill-mode: both;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+
+	&.flash {
+		animation-name: flash;
+	}
+
+	&.wiggle {
+		animation-name: wiggle;
+		animation-timing-function: ease-in;
+	}
+}
+
+.vamtam-animated {
+	animation-duration: .5s;
+	animation-fill-mode: both;
+	// animation-timing-function: ease-out;
+}
+
+@keyframes vamtam-fadein-title {
+  from {
+	opacity: 0.9;
+  }
+
+  to {
+	opacity: 0.3;
+  }
+}
+
+@keyframes vamtam-zoomin {
+	from {
+		opacity: 0;
+		transform: scale3d(.3, .3, .3);
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+.vamtam-zoomin {
+	animation-name: vamtam-zoomin;
+}
+
+@keyframes vamtam-zoomout {
+	from {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+		transform: scale3d(.3, .3, .3);
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+.vamtam-zoomout {
+	animation-name: vamtam-zoomout;
+}
+
+@keyframes vamtam-fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.vamtam-fadein {
+	animation-name: vamtam-fadein;
+}
+
+@keyframes vamtam-fadeout {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+.vamtam-fadeout {
+	animation-name: vamtam-fadeout;
+}
+

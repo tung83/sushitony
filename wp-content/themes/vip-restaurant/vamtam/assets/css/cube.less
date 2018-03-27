@@ -1,0 +1,379 @@
+.vamtam-cubeportfolio {
+	.cbp-nav-next,
+	.cbp-nav-prev {
+		border-radius: 60px;
+	}
+
+	&.cbp-slider-edge {
+		&.vamtam-cube-narrow {
+			.cbp-nav {
+				display: none;
+			}
+
+			.cbp-wrapper {
+				position: relative;
+				margin: auto;
+			}
+		}
+
+		.cbp-nav-prev,
+		.cbp-nav-next {
+			color: @body-link-regular;
+			background: @accent-color-8;
+			width: 56px;
+			height: 56px;
+			text-align: center;
+			transition: all .3s;
+			box-shadow: -3px 2px 4px 0px rgba(0,0,0,0.1);
+
+			&:after {
+				font-size: 24px;
+				line-height: 32px;
+				width: 32px;
+				height: 32px;
+				font-style: normal;
+				background: none;
+				font-family: theme;
+			}
+
+			&:hover {
+				opacity: 1;
+				color: @accent-color-5;
+				background: @accent-color-1;
+				border-color: @accent-color-1;
+			}
+		}
+
+		.cbp-nav-prev {
+			left: 30px;
+			box-shadow: 3px 2px 4px 0px rgba(0,0,0,0.1);
+
+			&:after {
+				content: icon(theme-arrow-left-sample);
+			}
+		}
+
+		.cbp-nav-next {
+			right: 30px;
+
+			&:after {
+				content: icon(theme-arrow-right-sample);
+			}
+		}
+
+		.cbp-nav-pagination {
+			bottom: -40px;
+		}
+
+		.cbp-nav-pagination-item {
+			width: 13px;
+			height: 13px;
+			border: 1px solid @accent-color-6;
+			margin: 0 5px;
+			opacity: 0.3;
+			transition: all 0.3s ease;
+		}
+
+		.cbp-nav-pagination-item:hover {
+			opacity: 1;
+			border: 3px solid @accent-color-1;
+		}
+
+		.cbp-nav-pagination-active {
+			background: @accent-color-1;
+			border-color: @accent-color-1;
+			opacity: 1;
+		}
+	}
+
+	.cbp-slider-inline {
+		.cbp-slider-next,
+		.cbp-slider-prev {
+			background: rgba(0, 0, 0, 0.15);
+			float: none;
+			color: @accent-color-8;
+			border-radius: 20em;
+			border: solid 2px @accent-color-5;
+			position: absolute;
+			left: 20px;
+			top: 0px;
+			text-align: center;
+			width: 50px;
+			height: 50px;
+			transition: background .2s ease;
+
+			&:after {
+				font-size: 28px;
+				line-height: 33px;
+				width: 32px;
+				height: 32px;
+				font-style: normal;
+				background: none;
+				font-family: theme;
+				border-radius: 20em;
+			}
+
+			&:hover {
+				color: @accent-color-1;
+				background: @accent-color-5;
+			}
+		}
+
+		.cbp-slider-next {
+			left: auto;
+			right: 20px;
+
+			&:after {
+				content: icon(theme-arrow-right-sample);
+			}
+		}
+
+		.cbp-slider-prev:after {
+			content: icon(theme-arrow-left-sample);
+			padding-left: 0px;
+		}
+	}
+
+	.cbp-slider-controls {
+		left: 0;
+		top: 50%;
+		margin-top: -25px;
+		z-index: 10;
+		width: 100%;
+		position: absolute;
+	}
+
+	+ .thumbnails {
+		.cbp-pagination-item {
+			border: solid 1px @accent-color-8;
+			transition: all .4s ease-out;
+
+			&:after {
+				background: rgba(255, 255, 255, 0.5);
+			}
+
+			&.cbp-pagination-active,
+			&:hover {
+				border-color: @accent-color-1;
+
+				&:after {
+					background: transparent;
+				}
+			}
+		}
+	}
+}
+
+
+
+.loop-wrapper.regular .vamtam-cubeportfolio.cbp-slider-edge {
+	.cbp-nav-next,
+	.cbp-nav-prev {
+		background: rgba(0, 0, 0, 0.15);
+		color: @accent-color-8;
+		border: solid 2px @accent-color-5;
+
+		&:hover {
+			color: @accent-color-1;
+			background: @accent-color-5;
+		}
+	}
+}
+
+
+.cbp-item.vamtam-project:hover{
+	.cbp-slider-next,
+	.cbp-slider-prev {
+		background: @accent-color-1;
+		color: @accent-color-5;
+		left: 5px;
+		border: transparent;
+		transition: all .3s ease;
+
+		&:hover {
+			background: @accent-color-5;
+			color: @accent-color-1;
+		}
+	}
+	.cbp-slider-next {
+		left: auto;
+		right: 5px;
+	}
+
+}
+
+.vamtam-related-content,
+.cbp-slider-edge.products,
+.loop-wrapper.news {
+	.cbp-nav {
+		opacity: 0;
+	}
+	.cbp-mode-slider:hover .cbp-nav {
+		opacity: 1;
+	}
+	.cbp-nav-prev {
+		left: -15px !important;
+	}
+	.cbp-nav-next {
+		right: -15px !important;
+	}
+}
+
+.related-portfolios {
+
+	.cbp-nav-prev {
+		left: -30px !important;
+	}
+	.cbp-nav-next {
+		right: -30px !important;
+	}
+}
+
+
+.related-posts.vamtam-related-content .cbp-mode-slider .cbp-item,
+.loop-wrapper .cbp-mode-slider .cbp-item{
+   	padding: 10px;
+}
+
+.loop-wrapper.regular .cbp-mode-slider .cbp-item {
+	padding: 0px;
+}
+.loop-wrapper.regular .post-media {
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+
+.vamtam-cubeportfolio.cbp,
+.cbp-lazyload,
+.cbp-popup-loadingBox,
+.cbp-popup-singlePageInline {
+	&:after {
+		-webkit-animation: none !important;
+		animation: none !important;
+		border: 0 !important;
+		content: url("@{theme-images-dir}loader-ring.gif") !important;
+		width: 70px !important;
+		height: 70px !important;
+	}
+}
+
+.cbp-popup-wrap {
+	&.cbp-popup-singlePage {
+		.cbp-popup-content {
+			max-width: 1200px;
+		    margin-top: 100px;
+
+			article.type-jetpack-portfolio .portfolio-image-wrapper {
+				margin: auto;
+			}
+		}
+	}
+
+	.cbp-popup-lightbox-img,
+	.cbp-popup-lightbox-iframe iframe {
+		box-shadow: none;
+	}
+}
+
+body .cbp-popup-singlePage { // keep the body selector, increases the specificity
+	.cbp-popup-navigation-wrap {
+		background-color: @accent-color-8;
+		border-bottom: solid 1px @accent-color-7;
+	}
+
+	.cbp-popup-singlePage-counter {
+		color: @accent-color-3;
+	}
+
+	.cbp-popup-next,
+	.cbp-popup-prev,
+	.cbp-popup-close {
+		background: none !important;
+		text-align: center;
+
+		&:after {
+			transition: all .5s;
+			font-family: 'theme';
+			font-size: 2.6em;
+			vertical-align: middle;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			color: @accent-color-1;
+			display: block;
+			width: 50px;
+			height: 45px;
+			padding-top: 5px;
+		}
+
+		&:hover:after {
+			color: @accent-color-6;
+		}
+	}
+
+	.cbp-popup-close:after {
+		content: icon(theme-icon-close);
+		font-size: 2.4em;
+	}
+
+	.cbp-popup-next:after {
+		content: icon(theme-arrow-right-sample);
+	}
+
+	.cbp-popup-prev:after {
+		content: icon(theme-arrow-left-sample);
+	}
+}
+
+body .cbp-popup-lightbox {
+    background: rgba(255,255,255,0.9) ;
+    background: @accent-color-5;
+}
+
+
+body .cbp-popup-ready.cbp-popup-lightbox .cbp-popup-next,
+body .cbp-popup-ready.cbp-popup-lightbox .cbp-popup-prev,
+body .cbp-popup-ready.cbp-popup-lightbox .cbp-popup-close {
+		background: #fff;
+		text-align: center;
+		background: none;
+		width: 75px;
+
+		&:after {
+			transition: all .5s;
+			font-family: 'theme';
+			font-size: 2em;
+		    line-height: 2em;
+			vertical-align: middle;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			color: @accent-color-6;
+			display: block;
+			width: 50px;
+			height: 50px;
+			padding: 10px;
+			border-radius: 20em;
+			border: solid 1px @default-line-color;
+			background: @accent-color-5;
+		}
+
+		&:hover:after {
+			color: @accent-color-5;
+			background: @accent-color-1;
+			border-color: @accent-color-1;
+		}
+	}
+
+.cbp-popup-close:after {
+	content: icon(theme-icon-close);
+	font-size: 2.4em;
+}
+
+.cbp-popup-next:after {
+	content: icon(theme-arrow-right-sample);
+}
+
+.cbp-popup-prev:after {
+	content: icon(theme-arrow-left-sample);
+}
+

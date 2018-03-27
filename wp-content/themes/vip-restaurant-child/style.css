@@ -1,0 +1,58 @@
+/*
+Theme Name: VIP Restaurant Child
+Author: VamTam
+Author URI: https://vamtam.com
+Template: vip-restaurant
+*/
+
+
+
+/*
+
+put your child theme styles here
+
+
+you don't need any @import rules
+
+*/
+
+
+}
+body.sticky-header-type-over.sticky-header .sticky-header-state-reset .header-content-wrapper
+{
+background:rgba(255,255,255,1);
+}
+.woocommerce .products.vamtam-wc .product a img
+{
+transform:scale(1.0);
+}
+.services .services-inside .services-title
+{
+line-height:24px;
+}
+header.main-header.layout-logo-menu .cart-dropdown
+{
+display:none;
+}
+.woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3
+{
+line-height:24px;
+padding:0 5px;
+margin:20px 0;
+}
+.woocommerce .products.vamtam-wc .product .add_to_cart_button
+{
+display: none;
+}
+.woocommerce .products.vamtam-wc .product .price
+{
+margin-bottom:10px;
+}
+#mega-menu-item-12800 > a{
+    background: red!important;
+    color: white!important;
+    padding: 7px 20px!important;
+    height: 35px!important;
+    line-height: 20px!important;
+    border-radius: 5px!important;
+}

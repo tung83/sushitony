@@ -1,0 +1,344 @@
+// common styles for dynamically generated buttons (to be used with .button-gen())
+.button-gen-base() {
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	vertical-align: middle;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	text-decoration: none;
+	text-shadow: none;
+	border-radius: 10em;
+	border: none;
+	font: e(%('%s %s/%s "%s"', @primary-font-font-weight, 13px, 1em, @primary-font-font-family));
+
+	&:focus {
+		outline: 1px dotted #000;
+	}
+}
+
+.button-gen-common() {
+	.button-gen-base();
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1em;
+	padding: 0;
+
+	&, span {
+		transition: color .3s ease-out, border .3s ease-out, background .3s ease-out !important; // !important necessary for RevSlider compatibility (>=5.1)
+	}
+
+ 	&:hover {
+		&, span {
+			text-decoration: none;
+		}
+	}
+}
+
+.button-gen-common-simple() {
+	.button-gen-base();
+	padding: 1em 2em;
+	transition: color .3s ease-out, border .3s ease-out, background .3s ease-out !important; // !important necessary for RevSlider compatibility (>=5.1)
+	background: transparent;
+	border: solid 1px @accent-color-1;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.button-gen-common-sc() {
+	.button-gen-common();
+
+	span {
+		display: inline-block;
+		font-size: 1em;
+		line-height: inherit;
+		padding: 1em 2em;
+		margin: 0 0;
+		vertical-align: middle !important;
+
+		&.icon {
+			font-size: 100%;
+
+			&.shortcode.inverted-colors {
+				font-size: 100%;
+			}
+
+			&:first-child,
+			&:last-child {
+				background: none;
+			}
+
+			&:first-child {
+				padding: .3em 0 .3em 1.4em !important;
+			}
+
+			&:last-child {
+				padding: .3em 1.4em .3em 0 !important;
+			}
+		}
+
+		&.btext {
+			position: relative;
+			font-weight: 500;
+			padding: 1em 2em;
+		}
+	}
+
+	&.button-border,
+	&.button-style-3 {
+		background: none;
+		font-style: normal;
+		overflow: hidden;
+
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 0;
+			bottom: 0;
+			left: 0;
+			transition: all 0.3s ease-out !important; // !important necessary for RevSlider compatibility (>=5.1)
+		}
+
+		&:hover {
+			&:after {
+				height: 100%;
+			}
+		}
+	}
+
+	&.button-border {
+		&:hover {
+			span.btext {
+				position: relative;
+				display: inline-block;
+				transition: transform 0.3s ease-out !important; // !important necessary for RevSlider compatibility (>=5.1)
+				transform: translateY(-100%);
+
+				&:before {
+					position: absolute;
+					content: attr(data-text);
+					transform: translate3d(0,0,0);
+					top: 100%;
+					left: 0px;
+					width: 100%;
+					height: auto;
+					padding: 1em 0;
+				}
+			}
+		}
+
+		span.btext {
+		}
+	}
+
+	&.button-style-3 {
+		border: none;
+
+
+		span.icon {
+			padding: 0.8em 1.2em !important;
+
+			&:first-child {
+				border-right: solid 1px;
+			}
+
+			&:last-child {
+				border-left: solid 1px;
+			}
+		}
+	}
+}
+
+// mixins for generating button styles based on their background color
+//
+// this MUST include only colors
+
+.button-gen(@bgcolor:#DDD) when (iscolor(@bgcolor)) {
+	background: @bgcolor;
+	.readable-color(@bgcolor, 70, 70%);
+}
+
+.button-gen(@bgcolor:#DDD) when not (iscolor(@bgcolor)) {
+	.button-gen();
+}
+
+.button-gen-simple-border(@bgcolor:#000) when (iscolor(@bgcolor)) {
+
+	.readable-color-hc(@main-background-background-color);
+}
+
+.button-gen-simple-border(@bgcolor:#DDD) when not (iscolor(@bgcolor)) {
+	.button-gen-simple-border();
+}
+
+.button-gen-sc(@bgcolor:#DDD) when (iscolor(@bgcolor)) {
+	&.button-filled {
+		.button-gen(@bgcolor);
+
+		span {
+			.readable-color(@bgcolor, 70, 70%);
+		}
+	}
+
+	&.button-border {
+		border: 1px solid @bgcolor;
+
+		&:hover span,
+		span {
+			color: @bgcolor;
+		}
+	}
+
+	&.button-style-3 {
+		background: @bgcolor;
+
+		span.icon {
+			.readable-color( @bgcolor, 70, 70% );
+		}
+	}
+}
+
+.button-gen-sc(@bgcolor:#DDD) when not (iscolor(@bgcolor)) {
+	.button-gen-sc();
+}
+
+/////////////////
+
+.button-gen-hover(@bgcolor:#DDD) when (iscolor(@bgcolor)) {
+	&:hover {
+		background: @bgcolor;
+
+		&, span {
+			.readable-color-hc(@bgcolor) ;
+		}
+	}
+}
+
+.button-gen-hover(@bgcolor:#DDD) when not (iscolor(@bgcolor)) {
+	.button-gen-hover();
+}
+
+.button-gen-hover-simple-border(@bgcolor:#DDD) when (iscolor(@bgcolor)) {
+	&:hover {
+		border-color: @bgcolor;
+		background: @bgcolor;
+		.readable-color-hc(@bgcolor);
+	}
+}
+
+.button-gen-hover-simple-border(@bgcolor:#DDD) when not (iscolor(@bgcolor)) {
+	.button-gen-hover-simple-border();
+}
+
+.button-gen-hover-sc(@bgcolor:#DDD) when (iscolor(@bgcolor)) {
+	&.button-filled {
+		.button-gen-hover(@bgcolor);
+	}
+
+	&.button-border,
+	&.button-style-3 {
+		&:after {
+			background: @bgcolor;
+		}
+
+		&:hover {
+			span {
+				border-color: @bgcolor;
+			}
+		}
+	}
+
+	&.button-style-3 {
+		&:hover {
+			span {
+				.readable-color-hc( @bgcolor );
+			}
+
+			span.icon {
+				.readable-border( @bgcolor );
+			}
+		}
+	}
+
+	&.button-border {
+		&:hover {
+			border-color: @bgcolor;
+
+			span {
+				&.btext {
+					&:before {
+						.readable-color-hc( @bgcolor );
+						background: @bgcolor;
+					}
+				}
+
+				&.icon {
+					.readable-color-hc( @bgcolor ) !important;
+				}
+			}
+		}
+	}
+}
+
+.button-gen-hover-sc(@bgcolor:#DDD) when not (iscolor(@bgcolor)) {
+	.button-gen-hover-sc();
+}
+
+/////////////////////////////////////////////////////
+
+// submit buttons and a catch-all selector which may style some plugins
+
+.button,
+input[type=button],
+input[type=submit] {
+	.button-gen-common-simple();
+	.button-gen-simple-border(@accent-color-1);
+	.button-gen-hover-simple-border(@accent-color-6);
+}
+
+// actual buttons below
+
+.vamtam-button {
+	.button-gen-common-sc();
+
+	&.accent1 { .button-gen-sc(@accent-color-1); }
+
+	&.accent2 { .button-gen-sc(@accent-color-2); }
+
+	&.accent3 { .button-gen-sc(@accent-color-3); }
+
+	&.accent4 { .button-gen-sc(@accent-color-4); }
+
+	&.accent5 { .button-gen-sc(@accent-color-5); }
+
+	&.accent6 { .button-gen-sc(@accent-color-6); }
+
+	&.accent7 { .button-gen-sc(@accent-color-7); }
+
+	&.accent8 { .button-gen-sc(@accent-color-8); }
+
+	&.hover-accent1 { .button-gen-hover-sc(@accent-color-1); }
+
+	&.hover-accent2 { .button-gen-hover-sc(@accent-color-2); }
+
+	&.hover-accent3 { .button-gen-hover-sc(@accent-color-3); }
+
+	&.hover-accent4 { .button-gen-hover-sc(@accent-color-4); }
+
+	&.hover-accent5 { .button-gen-hover-sc(@accent-color-5); }
+
+	&.hover-accent6 { .button-gen-hover-sc(@accent-color-6); }
+
+	&.hover-accent7 { .button-gen-hover-sc(@accent-color-7); }
+
+	&.hover-accent8 { .button-gen-hover-sc(@accent-color-8); }
+}
+
