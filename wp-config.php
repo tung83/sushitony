@@ -1,9 +1,7 @@
 <?php
-//Begin Really Simple SSL JetPack fix
-define( "JETPACK_SIGNATURE__HTTPS_PORT", 80 );
-//END Really Simple SSL
 
-define('WP_CACHE', false); // Added by WP Rocket
+
+define('WP_CACHE', true); //Added by WP-Cache Manager
 /**
  * The base configuration for WordPress
  *
@@ -24,13 +22,13 @@ define('WP_CACHE', false); // Added by WP Rocket
  */
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-//define('WP_CACHE', true); //Added by WP-Cache Manager
-define( 'WPCACHEHOME', '/home/minhmark/public_html/sushitony.com/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
-define('DB_NAME', 'sushitony_com');
+define('WP_CACHE', true); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', 'C:\Tung\wamp64\www\sushitony\wp-content\plugins\wp-super-cache/' ); //Added by WP-Cache Manager
+define('DB_NAME', 'sushitung');
 /** MySQL database username */
-define('DB_USER', 'sushitony_com');
+define('DB_USER', 'tung');
 /** MySQL database password */
-define('DB_PASSWORD', 'Z0iuQ3r3j');
+define('DB_PASSWORD', 'tung');
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
 /** Database Charset to use in creating database tables. */
@@ -74,7 +72,10 @@ $table_prefix  = 'wplm_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
+
+    define('WP_DEBUG_LOG', true);
+    define('WP_DEBUG_DISPLAY', true);
 /* That's all, stop editing! Happy blogging. */
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
