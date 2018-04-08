@@ -1,0 +1,62 @@
+@media (min-width: 700px) and (max-width: 958px) {
+	.responsive-layout {
+		&.boxed {
+			.page-wrapper {
+				&, .ajax-result {
+					> div,
+					> article {
+						padding-left: @horizontal-padding-large*2;
+						padding-right: @horizontal-padding-large*2;
+					}
+				}
+			}
+
+			.row > div.grid-1-1 {
+				&.extended,
+				&.extended-content {
+					padding-left: @horizontal-padding-large*2 !important;
+					padding-right: @horizontal-padding-large*2 !important;
+					margin-left: -@horizontal-padding-large*2 + @horizontal-padding/2;
+					margin-right: -@horizontal-padding-large*2 + @horizontal-padding/2;
+				}
+			}
+
+			.vamtam-body-sidebar,
+			#footer-sidebars .widget,
+			.header-middle .header-middle-content {
+				padding: 0 @horizontal-padding-large*2 !important;
+			}
+		}
+
+		.header-padding {
+			padding: 0 20px;
+		}
+	}
+}
+
+
+@media (max-width: 900px) {
+
+	#mega-menu-wrap-menu-header .mega-menu-item > a.mega-menu-link {
+		text-align: center !important;
+	}
+
+	#mega-menu-wrap-menu-header #mega-menu-menu-header {
+		box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.08);
+		padding: 20px 0;
+	}
+
+	[class*="gallery-columns-"] figure.gallery-item {
+		&:hover {
+			.gallery-caption {
+				left: -30px;
+				right: -30px;
+			}
+		}
+	}
+	.wp-caption .wp-caption-text,
+	.entry-caption,
+	.gallery-caption {
+		font-size: 0.7em;
+	}
+}

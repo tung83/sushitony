@@ -1,0 +1,75 @@
+@icon-size: 25px;
+@large-icon-size: 25px;
+
+.vamtam_icon_link {
+	li {
+		display: block;
+
+		&:first-child {
+		}
+	}
+
+	a {
+		color: inherit;
+		display: block;
+		height: 32px;
+		line-height: 32px;
+		position: relative;
+
+		span {
+			line-height: 32px;
+			height: 32px;
+			display: inline-block;
+		}
+	}
+
+	.content {
+		padding-left: 20px;
+		vertical-align: top;
+	}
+
+	.before {
+		font-size: 25px;
+	}
+
+	[data-icon-type="facebook"] {
+		color: #39599f;
+	}
+
+	[data-icon-type="twitter"] {
+		color: #45b0e3;
+	}
+
+	[data-icon-type="googleplus"] {
+		color: #d04f40;
+	}
+
+	[data-icon-type="pinterest"] {
+		color: #cb2027;
+	}
+
+	[data-icon-type="flickr"] {
+		color: #e956a2;
+	}
+
+	[data-icon-type="vimeo"] {
+		color: #1ab7ea;
+	}
+
+	[data-icon-type="youtube"] {
+		color: #f33;
+	}
+
+	[data-icon-type="linkedin"] {
+		color: #4875B4;
+	}
+
+	[data-icon-type="wordpress"] {
+		color: #464646;
+	}
+
+	#top-nav-sidebar & {
+		margin-top: -@icon-size/4;
+		margin-bottom: -@icon-size/4;
+	}
+}

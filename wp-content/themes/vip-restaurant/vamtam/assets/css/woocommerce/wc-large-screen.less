@@ -1,0 +1,32 @@
+@media only screen and ( min-width: @woocommerce-mobile ) {
+	.woocommerce {
+		&.columns-2 .products.vamtam-wc .product,
+		&.product-columns-2 .products.vamtam-wc .product {
+			width: calc( ~"100%/2 - 1/2*30px" );
+		}
+
+		&.columns-3 .products.vamtam-wc .product,
+		&.product-columns-3 .products.vamtam-wc .product {
+			width: calc( ~"100%/3 - 2/3*30px" );
+		}
+
+		// four columns is also used for related/upsells
+		.related.products ul.products li.product,
+		.upsells.products ul.products li.product,
+		&.columns-4 .products.vamtam-wc .product,
+		&.product-columns-4 .products.vamtam-wc .product {
+			width: calc( ~"100%/4 - 3/4*30px" );
+		}
+
+		&.columns-5 .products.vamtam-wc .product,
+		&.product-columns-5 .products.vamtam-wc .product {
+			width: calc( ~"100%/5 - 4/5*30px" );
+		}
+
+		.products.vamtam-wc {
+			.product {
+				margin: 0px 30px 30px 0;
+			}
+		}
+	}
+}

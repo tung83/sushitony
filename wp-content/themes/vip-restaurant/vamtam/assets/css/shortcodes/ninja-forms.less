@@ -1,0 +1,60 @@
+.ninja-forms-field-error {
+	font-size: 0.8em;
+	margin-top: -5px;
+}
+
+.ninja-forms-cont .ninja-forms-form-wrap select,
+.ninja-forms-cont .ninja-forms-form-wrap textarea {
+ 	width: 100%;
+ 	font-size: 14px;
+ 	height: 120px;
+}
+
+.ninja-forms-cont .ninja-forms-form-wrap select {
+	height: 50px;
+}
+
+.field-wrap,
+#ninja_forms_required_items {
+	margin-bottom: 20px;
+	padding-right: 20px;
+}
+
+.ninja-forms-required-items {
+	padding: 0px 0px 10px 0px;
+	font-size: 12px;
+}
+
+.ninja-forms-form-title {
+	font-size: 30px;
+	text-align: center;
+}
+
+.ninja-forms-form-wrap label {
+	font-weight: normal !important;
+	font-size: 11px;
+	text-transform: uppercase;
+	color: @accent-color-3;
+}
+
+.form-centered {
+	text-align: center;
+
+	input, textarea {
+		text-align: left;
+	}
+}
+
+.ninja-forms-required-items {
+	opacity: 0.5;
+}
+
+.field-wrap input[type="submit"], .field-wrap input[type="button"], .field-wrap button {
+	.button-gen-common-simple();
+		.button-gen-hover-simple-border(@accent-color-6);
+		color: @accent-color-6 !important;
+
+		&:hover {
+			color: @accent-color-5 !important;
+		}
+}

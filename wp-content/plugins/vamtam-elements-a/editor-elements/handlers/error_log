@@ -1,0 +1,2 @@
+[11-May-2017 08:57:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function add_shortcode() in /home/minhmark/public_html/sushitony.com/wp-content/plugins/vamtam-elements-a/editor-elements/handlers/divider.php on line 5
+[11-May-2017 08:57:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to undefined function add_shortcode() in /home/minhmark/public_html/sushitony.com/wp-content/plugins/vamtam-elements-a/editor-elements/handlers/divider.php on line 5

@@ -1,0 +1,152 @@
+blockquote {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	margin: 30px;
+	padding-left: 20px;
+	border-left: 1px  dashed @accent-color-1;
+	text-align: left;
+	font-size: 1.2em;
+	font-weight: 300;
+
+	p {
+		.vamtam-font(h3-);
+		font-family: @h3-font-family;
+		font-size: 1em;
+		line-height: 1.5em;
+		font-weight: 300;
+		margin: 1em 0em !important;
+		color: @accent-color-1;
+	}
+
+	&.jetpack-testimonial p {
+		color: @primary-font-color;
+	}
+
+	&.small {
+		p, & {
+			.vamtam-font(primary-font-);
+			margin-bottom: 0;
+		}
+	}
+
+	&.simple {
+		overflow: auto;
+		margin: 0;
+		padding: 20px 0 10px 0;
+		padding-left: 0;
+		border-left: 0;
+		text-align: center;
+
+		.quote-thumbnail {
+			height: 100px;
+			margin-left: 10px;
+			margin-bottom: 20px;
+
+			img {
+				display: inline-block;
+				border-radius: 100%;
+				margin: 0px;
+				max-height: 100%;
+				width: auto;
+			}
+
+			+ .quote-text {
+				text-align: center;
+			}
+		}
+
+		.quote-summary {
+			margin-top: 0;
+		}
+
+		h3.quote-summary {
+			margin-bottom: 0px;
+		}
+
+		.quote-title-wrapper {
+			margin: 10px 0 0 0;
+		}
+
+		.quote-content {
+			padding: 0px 15%;
+		}
+
+		.quote-title {
+			width: auto;
+			color: @accent-color-3;
+			border: none;
+			padding: 0px;
+			border-radius: 0px;
+			margin: 0px 0px 15px 0px;
+			font-size: 10px;
+			font-weight: 600;
+			letter-spacing: 0.1em;
+
+			&{
+				color: @accent-color-3;
+			}
+
+			a {
+				color: @accent-color-1;
+			}
+
+			.the-title:not(:last-child) {
+				padding-right: 3px;
+			}
+
+			.the-title {
+				font-size: 10px;
+				color: @accent-color-3;
+			}
+
+			.icon {
+				font-size: 16px;
+				vertical-align: middle;
+				padding-bottom: 2px;
+			}
+		}
+
+		.quote-text {
+			.vamtam-font(primary-font-);
+			overflow: hidden;
+		}
+	}
+
+	cite {
+		display: block;
+		margin: 20px 0 0 0;
+
+		&, a {
+			.vamtam-font(primary-font-);
+			color: @body-link-regular;
+		}
+
+		a {
+			vertical-align: middle;
+		}
+
+		&:before {
+			display: inline-block;
+			margin-right: 10px;
+			width: 30px;
+			height: 0;
+			border-bottom: 1px solid @default-line-color;
+			content: "";
+			vertical-align: middle;
+		}
+	}
+
+	&:last-child {
+		cite:empty {
+			display: none;
+		}
+	}
+
+	p {
+		&:first-child { margin-top: 0; }
+
+		&:last-child { margin-bottom: 0; }
+	}
+}
+

@@ -1,0 +1,164 @@
+@media (min-width: 959px) {
+	.page-wrapper {
+		> .left-right {
+			max-width: 100% - @left-sidebar-width - @right-sidebar-width;
+		}
+
+		> .left-only {
+			max-width: 100% - @left-sidebar-width;
+		}
+
+		> .right-only {
+			max-width: 100% - @right-sidebar-width;
+		}
+	}
+
+	.add-border {
+		border: solid 1px #EDEDED;
+	}
+
+	.add-shadow {
+		box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
+	}
+
+	header.main-header {
+		overflow: visible;
+	}
+
+	.top-nav {
+		> .top-nav-inner {
+			> .row {
+				> .row:not(.single-cell) {
+					display: table;
+
+					> .grid-1-2 {
+						display: table-cell;
+						float: none;
+						width: 100%;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+
+	#sub-header {
+		position: relative;
+		z-index: 2;
+
+		.meta-header {
+			padding: 0 60px;
+		}
+	}
+
+	.portfolio-filters {
+		.cbp-l-filters-dropdown {
+			margin-bottom: 0;
+		}
+
+		.cbp-l-filters-dropdownWrap {
+			position: relative;
+			background: none;
+			width: auto;
+		}
+
+		.cbp-l-filters-dropdownList {
+			display: block;
+
+			.cbp-filter-item {
+				width: auto;
+			}
+		}
+
+		.cbp-l-filters-dropdownHeader {
+			display: none;
+		}
+
+		.cbp-search {
+			margin-bottom: 0;
+		}
+	}
+
+	.vamtam-grid {
+		&.left-border {
+			&:before {
+				position: absolute;
+				top: 0%;
+				bottom: 0%;
+				left: 0;
+				width: 1px;
+				height: 100%;
+				content: "";
+			}
+		}
+
+		&.has-more-button {
+			&,
+			&.grid-1-1,
+			&.extended.grid-1-1 {
+				position: relative;
+				padding-right: 77px;
+			}
+
+			.column-read-more-btn {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				z-index: 44444444444;
+				margin-top: -28px;
+				padding: @small-padding @small-padding @small-padding @small-padding/2;
+				background: @default-bg-color;
+				box-shadow: 0 1px 1px #e3e3e3;
+				color: @body-link-regular;
+				text-align: center;
+				font-size: 16px;
+
+				&:hover {
+					color: @body-link-hover;
+				}
+			}
+		}
+	}
+
+	.move-into-slider,
+	.move-into-slider-2 {
+		z-index: 10;
+
+		.vamtam-tabs {
+			padding-top: 0;
+			margin: 0 -20px;
+		}
+	}
+
+	.move-into-slider {
+		margin-top: -60px;
+	}
+
+	.move-into-slider-2 {
+		margin-top: -175px;
+	}
+
+	.page-template-guestbook-php {
+		#sub-header header.page-header {
+			padding-bottom: 90px;
+		}
+
+		#comments:first-child {
+			margin-top: -90px;
+			position: relative;
+			z-index: 10;
+		}
+	}
+
+	body.woocommerce-checkout {
+		.col-1 {
+			width: 58% !important;
+			box-sizing: border-box;
+			padding-right: 30px;
+		}
+
+		.col-2 {
+			width: 42% !important;
+		}
+	}
+}

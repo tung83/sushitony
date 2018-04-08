@@ -1,0 +1,222 @@
+#scroll-to-top,
+#toggle-style-switcher {
+	display: block;
+	width  : 25px !important;
+	height : 22px !important;
+	line-height: 22px !important;
+	font-size  : 20px !important;
+	padding    : 4px;
+	margin-left: 2px;
+	font-family: "icomoon";
+
+	text-align: center;
+	cursor: pointer;
+	z-index: 9998;
+	border: none !important;
+	position: relative;
+
+	background: @accent-color-1;
+	text-shadow: 0 -1px 0 darken(@accent-color-1, 10%);
+	color: @accent-color-8 !important;
+	border-radius: 1px 0 0 1px;
+
+	&:hover {
+		padding-right: 6px;
+		text-decoration: none;
+		margin-left: 0;
+		color: @accent-color-8 !important;
+	}
+}
+
+#style-switcher {
+	position: fixed !important;
+	z-index: 900000 !important;
+	top: @header-height + 70px;
+	left: 0;
+	right: auto;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	#toggle-style-switcher {
+		position: absolute;
+		top: 0;
+		right: -35px !important;
+		border-radius: 0 1px 1px 0;
+		margin-left: 0;
+		margin-right: 2px;
+
+		&:after {
+			border-right-color: @accent-color-1 !important;
+		}
+
+		&:before {
+			content: icon(theme-brush);
+			font-family: theme;
+		}
+
+		&:hover {
+			padding-right: 4px;
+		}
+	}
+
+	&.open #toggle-style-switcher,
+	&:hover #toggle-style-switcher {
+		padding-left: 6px !important;
+		margin-right: 0 !important;
+		opacity: 1;
+	}
+
+	body.admin-bar & {
+		top: @header-height + 70px + 33px;
+	}
+}
+
+/*--------------------------------------------------------------------------
+Meta Icons + Feedback + Scroll to Top
+--------------------------------------------------------------------------*/
+
+/* Scroll to Top */
+#scroll-to-top {
+	position: fixed;
+	z-index: -1;
+	opacity: 0;
+	bottom: 15px;
+	right: 20px;
+	width: 30px !important;
+	height: 30px !important;
+	line-height: 28px !important;
+	font-size: 20px !important;
+	font-family: theme !important;
+	padding: 4px;
+	margin-left: 0px;
+	border: solid 1px @accent-color-1 !important;
+	background: transparent;
+	text-shadow: none;
+	color: @accent-color-1 !important;
+	border-radius: 50%;
+	transition: all 0.3s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	&:hover {
+		opacity: 0;
+		padding: 4px;
+		background: @accent-color-1;
+		border-color: @accent-color-1;
+	}
+
+	&.visible {
+		opacity: 1;
+		z-index: 200;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.post-siblings a {
+	@height: 70px;
+
+	position: fixed;
+	top: 50%;
+	display: block;
+	width: 50px;
+	padding: 0px 10px;
+	border-radius: 30em;
+	height: @height;
+	background: @accent-color-5;
+	margin-top: -@height/2;
+	text-align: center;
+	color: @h1-color;
+	font-size: 26px;
+	line-height: 76px;
+	transition: all .15s ease-out;
+	border: solid 1px @accent-color-7;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	&:hover {
+		background: @accent-color-1;
+		border-color: @accent-color-1;
+		color: @accent-color-5;
+	}
+
+	&[rel="prev"] {
+		left: 20px;
+	}
+
+	&[rel="next"] {
+		right: 20px;
+	}
+}
+
+.jp-carousel-next-button,
+.jp-carousel-previous-button,
+.jp-carousel-close-hint {
+	span {
+		opacity: 1 !important;
+		background: none !important;
+		text-indent: -1000px;
+
+		&:after {
+			content: icon(theme-arrow-right-sample);
+			font-family: theme;
+			color: @accent-color-6;
+			background: @accent-color-5;
+			display: block;
+			width: 50px;
+			height: 50px;
+	   	    padding: 10px;
+	   	    font-size: 2em;
+			line-height: 50px;
+			vertical-align: middle;
+			top: 43%;
+			position: absolute;
+			text-indent: initial;
+			text-align: center;
+			border-radius: 30em;
+			transition: all .3s ease;
+		}
+
+		&:hover:after {
+			background: @accent-color-1;
+			color: @accent-color-5;
+		}
+	}
+}
+
+.jp-carousel-next-button {
+	right: 35px !important;
+}
+
+.jp-carousel-previous-button {
+	left: 45px !important;
+}
+
+.jp-carousel-previous-button span:after {
+	content: icon(theme-arrow-left-sample)
+}
+
+.jp-carousel-wrap .jp-carousel-close-hint {
+	text-align: center;
+	width: 70px;
+	height: 70px;
+	padding: 0px;
+	right: 45px;
+	overflow: hidden;
+	margin-top: 20px;
+
+	color: rgba(0, 0, 0, 0) !important;
+
+	span {
+		margin: 0px;
+
+		&:after {
+			font-size: 1em;
+			top: 0px;
+			left: 0px;
+			content: icon( theme-icon-close)
+		}
+	}
+}

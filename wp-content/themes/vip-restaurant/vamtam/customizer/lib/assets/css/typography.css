@@ -1,0 +1,21 @@
+.customize-control-vamtam-typography select {
+  width: 100%;
+}
+.customize-control-vamtam-typography .sizes input {
+  width: calc(98% - 1em);
+}
+.customize-control-vamtam-typography .variant-color,
+.customize-control-vamtam-typography .sizes {
+  display: flex;
+}
+.customize-control-vamtam-typography .variant-color > div,
+.customize-control-vamtam-typography .sizes > div {
+  width: 50%;
+}
+.customize-control-vamtam-typography .variant-color > div:first-child,
+.customize-control-vamtam-typography .sizes > div:first-child {
+  padding-right: 1em;
+}
+.customize-control-vamtam-typography .wp-picker-open + .wp-picker-input-wrap {
+  display: block;
+}

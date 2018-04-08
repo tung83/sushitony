@@ -1,0 +1,112 @@
+.linkarea-gen(@bgcolor:#DDD) when (iscolor(@bgcolor)) {
+	&.background-transparent {
+		background-color: fade(@bgcolor, 0%);
+		border: solid 1px @accent-color-7;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: @bgcolor;
+	}
+
+	&:active {
+		background-color: darken(@bgcolor, 5%);
+	}
+
+	&:focus {
+		border : 1px solid darken(@bgcolor, 15%);
+	}
+}
+
+.linkarea-gen(@bgcolor: #ddd) when not (iscolor(@bgcolor)) {
+	.linkarea-gen(transparent);
+}
+
+.linkarea-bg-gen( @bgcolor: #DDD ) when ( iscolor( @bgcolor ) ) {
+	background-color: @bgcolor;
+
+	&:not(:hover) {
+		a, p, h1, h2, h3, h4, h5, h6 {
+			.readable-color( @bgcolor );
+		}
+	}
+}
+
+.linkarea-bg-gen( @bgcolor: #ddd ) when not ( iscolor( @bgcolor ) ) {
+	.linkarea-bg-gen(transparent);
+}
+
+.linkarea {
+	padding: 20px;
+	cursor: pointer;
+	border: 1px solid transparent;
+	min-height: 50px;
+	box-sizing: border-box;
+	background-clip: border-box;
+	transition: all .5s;
+
+	&.background-accent1 { .linkarea-bg-gen( @accent-color-1 ); }
+
+	&.background-accent2 { .linkarea-bg-gen( @accent-color-2 ); }
+
+	&.background-accent3 { .linkarea-bg-gen( @accent-color-3 ); }
+
+	&.background-accent4 { .linkarea-bg-gen( @accent-color-4 ); }
+
+	&.background-accent5 { .linkarea-bg-gen( @accent-color-5 ); }
+
+	&.background-accent6 { .linkarea-bg-gen( @accent-color-6 ); }
+
+	&.background-accent7 { .linkarea-bg-gen( @accent-color-7 ); }
+
+	&.background-accent8 { .linkarea-bg-gen( @accent-color-8 ); }
+
+	&.accent1 { .linkarea-gen(@accent-color-1); }
+
+	&.accent2 { .linkarea-gen(@accent-color-2); }
+
+	&.accent3 { .linkarea-gen(@accent-color-3); }
+
+	&.accent4 { .linkarea-gen(@accent-color-4); }
+
+	&.accent5 { .linkarea-gen(@accent-color-5); }
+
+	&.accent6 { .linkarea-gen(@accent-color-6); }
+
+	&.accent7 { .linkarea-gen(@accent-color-7); }
+
+	&.accent8 { .linkarea-gen(@accent-color-8); }
+
+	.first {
+		text-align: center;
+		padding-bottom: 10px;
+
+		img {
+			display: inline-block;
+			vertical-align: bottom;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	&:hover h3 {
+		text-decoration: none;
+		color: @body-link-regular;
+		transition: color 0.4s;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.05);
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+}

@@ -1,0 +1,255 @@
+html, body, th, td, p {
+	color: @primary-font-color;
+}
+
+.color-accent-1,
+.hover-color-accent-1:hover {
+	color: @accent-color-1 !important;
+}
+
+.color-accent-2,
+.hover-color-accent-2:hover {
+	color: @accent-color-2 !important;
+}
+
+.color-accent-3,
+.hover-color-accent-3:hover {
+	color: @accent-color-3 !important;
+}
+
+.color-accent-4,
+.hover-color-accent-4:hover {
+	color: @accent-color-4 !important;
+}
+
+.color-accent-5,
+.hover-color-accent-5:hover {
+	color: @accent-color-5 !important;
+}
+
+.color-accent-6,
+.hover-color-accent-6:hover {
+	color: @accent-color-6 !important;
+}
+
+.color-accent-7,
+.hover-color-accent-7:hover {
+	color: @accent-color-7 !important;
+}
+
+.color-accent-8,
+.hover-color-accent-8:hover {
+	color: @accent-color-8 !important;
+}
+
+*,
+p,
+.main-container,
+.cbp-popup-content {
+	.vamtam-font(primary-font-);
+}
+
+.page-header .desc,
+.page-header .desc a,
+em {
+	.vamtam-font(em-);
+	color: @em-color;
+}
+
+h1,
+.font-h1 {
+	&, a, footer.main-footer & a { .vamtam-font(h1-); }
+}
+
+h2,
+.font-h2 {
+	&, a, footer.main-footer & a { .vamtam-font(h2-); }
+}
+
+h3,
+.font-h3 {
+	&, a, footer.main-footer & a { .vamtam-font(h3-); }
+}
+
+h4,
+.font-h4 {
+	&, a, footer.main-footer & a { .vamtam-font(h4-); }
+}
+
+h5,
+.font-h5 {
+	&, a, footer.main-footer & a { .vamtam-font(h5-); }
+}
+
+h6,
+.font-h6 {
+	&, a, footer.main-footer & a { .vamtam-font(h6-); }
+}
+
+h1,
+.color-h1 {
+	&, a { color: @h1-color }
+}
+
+h2,
+.color-h2 {
+	&, a { color: @h2-color }
+}
+
+h3,
+.color-h3 {
+	&, a { color: @h3-color }
+}
+
+h4,
+.color-h4 {
+	&, a { color: @h4-color }
+}
+
+h5,
+.color-h5 {
+	&, a { color: @h5-color }
+}
+
+h6,
+.color-h6 {
+	&, a { color: @h6-color }
+}
+
+h1 {
+	em {
+		font: ~"@{em-font-weight}" @h1-font-size/@h1-line-height @em-font-family;
+		color: @h1-color;
+	}
+}
+
+h2 {
+	em {
+		font: ~"@{em-font-weight}" @h2-font-size/@h2-line-height @em-font-family;
+		color: @h2-color;
+	}
+}
+
+h3 {
+	em {
+		font: ~"@{em-font-weight}" @h3-font-size/@h3-line-height @em-font-family;
+		color: @h3-color;
+	}
+}
+
+h4 {
+	em {
+		font: ~"@{em-font-weight}" @h4-font-size/@h4-line-height @em-font-family;
+		color: @h4-color;
+	}
+}
+
+h5 {
+	em {
+		font: ~"@{em-font-weight}" @h5-font-size/@h5-line-height @em-font-family;
+		color: @h5-color;
+	}
+}
+
+h6 {
+	em {
+		font: ~"@{em-font-weight}" @h6-font-size/@h6-line-height @em-font-family;
+		color: @h6-color;
+	}
+}
+
+small {
+	color: #e2e2e2;
+	font-size: 11px !important;
+}
+
+a {
+	text-decoration: none;
+	color: @body-link-regular;
+	transition: color .3s;
+
+	.icon.shortcode.use-hover {
+		transition: all .3s ease-out;
+		padding: 0.3em;
+		border-radius: 20em;
+		line-height: 1em;
+	}
+
+	&:visited {
+		color: @body-link-visited;
+	}
+
+	&:active {
+		color: @body-link-active;
+	}
+
+	&:hover {
+		text-decoration: none;
+		color: @body-link-hover;
+
+		.icon.shortcode.use-hover {
+			color: @body-link-hover !important;
+			background: @accent-color-5;
+		}
+	}
+}
+
+.vamtam-main {
+	a {
+		.icon.shortcode.border {
+			color: @body-link-regular;
+		}
+
+		&:hover .icon.shortcode.border {
+			border-color: @body-link-hover;
+			color: @body-link-hover !important;
+		}
+	}
+}
+
+p { margin: 1em 0 }
+
+p:empty {display: none}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0.6em;
+	margin-bottom: 0.6em;
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+
+.vamtam-font-style-1 {
+	.vamtam-font( additional-font-1- );
+	padding-bottom: 10px;
+
+	&.with-color {
+		color: @additional-font-1-color;
+	}
+}
+
+.vamtam-font-style-2 {
+	.vamtam-font( additional-font-2- );
+	margin-top: -1em;
+	letter-spacing: 0.3em;
+	margin-bottom: 1.6em;
+
+	&:before,
+	&:after {
+		display: inline-block;
+		width: auto;
+		height: 15px;
+		content: "~";
+		font-size: 1.1em;
+		padding: 0px 5px;
+	}
+
+	&.with-color {
+		color: @additional-font-2-color !important;
+	}
+}
+
+small {
+	color: @primary-font-color;
+	font-size: 12px;
+}

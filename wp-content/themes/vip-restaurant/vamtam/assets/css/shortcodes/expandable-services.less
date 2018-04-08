@@ -1,0 +1,158 @@
+.services.has-more {
+	position: relative;
+	padding: 0;
+	z-index: 2000;
+
+	.title {
+		margin: 20px 0 0 -20px;
+	}
+
+	.image-wrapper {
+		padding: 20px;
+		text-align: center;
+		transition: 0.7s;
+
+		img {
+			display: inline-block;
+			vertical-align: bottom;
+		}
+
+		&:hover {
+			img {
+				transform: scale(1.2);
+			}
+		}
+	}
+
+	.services-content-wrapper {
+		> .row {
+			margin: 0;
+		}
+
+		p a {
+			letter-spacing: 2px;
+			color: @accent-color-5;
+
+			&:hover {
+				color: @accent-color-1;
+			}
+		}
+	}
+
+	.open {
+		width: 100%;
+		position: absolute;
+		top: 100%;
+		padding: 0 20px 0 20px;
+
+		.services-content-wrapper {
+			padding: 30px 20px;
+		}
+
+		box-sizing: border-box;
+
+		p:first-child {
+			margin-top: 0;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.closed {
+		max-height: 100%;
+		max-width: 100%;
+
+		.services-content-wrapper {
+			padding: 0px 20px 20px 20px;
+			text-align: center;
+
+			font-weight: 400;
+			letter-spacing: 1px;
+			background: fade( @accent-color-6, 20% );
+
+			&:before {
+				content: "";
+				opacity: 0;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				position: absolute;
+				height: 100%;
+				width: 100.1%;
+				z-index: -1;
+				transition: 0.6s;
+				background: @accent-color-6;
+			}
+		}
+
+		.title {
+			display: inline-block;
+			position: relative;
+			background: none;
+			font-size: 3em;
+			font-weight: normal;
+			letter-spacing: 2px;
+			line-height: 1.1em;
+			margin: 0px;
+			width: 90%;
+
+			&:after {
+				content: "";
+				display: block;
+				height: 1px;
+				margin: auto;
+				transition: all .6s;
+				background: @accent-color-1;
+				margin-bottom: 20px;
+				margin-top: 20px;
+				width: 70px;
+			}
+		}
+	}
+
+	&.state-hover {
+		.closed {
+			.title:after {
+				width: 100px;
+			}
+
+			.services-content-wrapper:before {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	&.expandable-animation-3d {
+		.open {
+			transform-origin: top;
+			transform: rotateX(-90deg);
+			transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+		}
+
+		.closed {
+			-webkit-backface-visibility: hidden;
+			-webkit-transform: translate3d(0,0,0);
+		}
+	}
+
+	&.expandable-animation-2d {
+		.open {
+			transform: none;
+			height: 0;
+			overflow: hidden;
+		}
+	}
+
+	html.touchevents & {
+		.open {
+			transform: none;
+			position: relative;
+			top: 0;
+		}
+	}
+}
+

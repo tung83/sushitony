@@ -1,0 +1,8 @@
+.vamtam-color-row-group-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.vamtam-color-row-single-color-wrapper label {
+  display: block;
+}

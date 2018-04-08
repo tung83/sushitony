@@ -1,0 +1,123 @@
+.vamtam-accordion {
+	border: solid 1px @default-line-color;
+	margin : 0;
+	padding-top: 0px;
+	list-style: none;
+	background: @accent-color-8;
+
+	.tab {
+		position: relative;
+		font-size: inherit;
+		margin: 0;
+		padding: 0;
+		color: inherit;
+		outline: none;
+		border-top: 1px solid @accent-color-7;
+
+		.ui-icon {
+			width: 40px;
+			height: 40px;
+			font-style: normal;
+			display: block;
+			position: absolute;
+			left: 10px;
+			top: 18px;
+			text-align: center;
+			font-size: 14px;
+			background-image: none;
+			margin: 0px;
+
+			&:after {
+				color: @accent-color-1;
+				font-family: theme;
+				content: icon(theme-plus);
+				margin: 0px;
+				left: 0px;
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				font-size: 14px;
+				text-align: center;
+				text-indent: initial;
+			}
+		}
+
+		&:first-child {
+			border: 0px;
+		}
+
+		&.ui-state-hover,
+		&.ui-state-active {
+			@hover-color: @accent-color-7;
+			background-color: @accent-color-7;
+
+			.ui-icon {
+				&:after {
+					content: icon(theme-minus);
+				}
+			}
+		}
+
+		&.ui-state-active,
+		&.ui-state-selected {
+			border-bottom: 1px solid @accent-color-1;
+		}
+
+		&.ui-state-active.has-bg {
+			background: @accent-color-1;
+
+			.inner {
+				opacity: 1;
+			}
+		}
+
+		.inner {
+			.vamtam-font(h4-);
+			padding: 20px 20px 20px 60px;
+			font-size: 1.2em;
+			font-weight: normal;
+			font-family: @h1-font-family;
+			margin: 0;
+			cursor: pointer;
+			outline: none !important;
+			display: block;
+			transition: all .3s ease;
+			border-radius: 0;
+			text-align: left;
+
+			&:hover {
+				text-decoration: none;
+				color: @body-link-hover;
+			}
+		}
+	}
+
+	.ui-widget-content {
+		border: none;
+		padding: 20px 60px;
+	}
+
+	.pane .inner {
+		z-index: 1;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.pane-wrapper {
+		background-position: top center;
+		background-size: cover;
+		padding: 0;
+		border-bottom: 1px solid @accent-color-7;
+
+		&:first-child {
+		}
+
+		&:last-child {
+			border-bottom: none;
+
+			&, .tab:not(.ui-state-active) .inner {
+				border-radius: 0;
+			}
+		}
+	}
+}

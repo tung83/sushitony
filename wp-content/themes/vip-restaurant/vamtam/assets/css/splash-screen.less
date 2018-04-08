@@ -1,0 +1,35 @@
+.vamtam-splash-screen {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: @accent-color-8;
+	z-index: 99999;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	.vamtam-splash-screen-progress-wrapper {
+		position: absolute;
+		bottom: 55%;
+		left: 20%;
+		right: 20%;
+		padding-bottom: 30px;
+		border-bottom: 1px solid @accent-color-7;
+	}
+
+	.vamtam-splash-screen-progress {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background: @accent-color-1;
+		transition: width .25s linear;
+	}
+
+	img {
+		margin: auto;
+		display: block;
+	}
+}

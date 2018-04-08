@@ -1,0 +1,55 @@
+.post-article .gallery-post-format  .post-media,
+.portfolio-image-wrapper {
+	padding: 0;
+	border: 0;
+	position: relative;
+	text-align: center;
+	border-radius: 6px;
+	overflow: hidden;
+
+	img {
+		margin: auto;
+		width: 100%;
+		height: auto;
+	}
+
+	.client-logo img {
+		width: auto;
+	}
+}
+
+.vamtam-related-content .post-article .gallery-post-format  .post-media,
+.loop-wrapper .post-article .gallery-post-format  .post-media {
+	border-radius: 0;
+}
+
+.thumbnail.partner {
+	display: block;
+	position: relative;
+	opacity: 0.8;
+	padding-bottom: .5em;
+	transition: all .3s ease;
+
+	&:after {
+		color: #aeaeae !important;
+		content: attr(title);
+		display: block;
+		border-top: 1px solid;
+		text-align: center;
+		position: absolute;
+		bottom: -1em;
+		left: 0;
+		right: 0;
+		height: 1.5em;
+		opacity: 0;
+		transition: all .3s ease;
+	}
+
+	&:hover {
+		opacity: 1;
+
+		&:after {
+			opacity: 1;
+		}
+	}
+}

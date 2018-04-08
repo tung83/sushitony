@@ -1,0 +1,64 @@
+.dropcap1,
+.dropcap2 {
+	float: left;
+	font-weight: 400 !important;
+	overflow: visible;
+	text-align: center;
+	vertical-align: middle;
+	font-family: @h1-font-family;
+	color: @accent-color-1;
+}
+
+.dropcap1 {
+	font-size: 30px !important;
+	border: 1px solid @accent-color-1;
+	width: auto;
+	color: @accent-color-1;
+	line-height: 1.4em;
+	min-width: 1.5em;
+	margin: -0.1em 15px -0.1em 0px;
+	padding: 0 10px 5px 10px;
+}
+
+.dropcap2 {
+	font-size: @primary-font-line-height * 2 !important;
+	height: @primary-font-line-height * 2;
+	line-height: 1em;
+	margin: 0em 20px 0px 0.1em;
+	padding: 0;
+	width: 2ex;
+
+	&.accent1 { color: @accent-color-1; }
+
+	&.accent2 { color: @accent-color-2; }
+
+	&.accent3 { color: @accent-color-3; }
+
+	&.accent4 { color: @accent-color-4; }
+
+	&.accent5 { color: @accent-color-5; }
+
+	&.accent6 { color: @accent-color-6; }
+}
+
+.dropcap-text {
+	display: table-cell;
+	vertical-align: middle;
+	.vamtam-font(h4-);
+}
+
+.dropcap-wrapper {
+	display: table;
+
+	.dropcap1,
+	.dropcap2 {
+		float: none;
+		display: block;
+	}
+
+	.dropcap-left {
+		display: table-cell;
+		vertical-align: top;
+	}
+}
+

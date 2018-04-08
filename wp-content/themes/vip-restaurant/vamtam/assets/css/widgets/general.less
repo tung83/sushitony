@@ -1,0 +1,137 @@
+.widget {
+	margin: 0 auto 30px;
+	padding: 0;
+
+	.widget-title {
+		position: relative;
+		overflow: hidden;
+		margin: 0px 0px 20px 0px;
+		padding: 0 0px 3px 0;
+		border-bottom: 1px solid @default-line-color;
+		line-height: 2.2em !important;
+
+		&, a {
+			word-wrap: break-word;
+			.vamtam-font(h4-);
+		}
+
+		> .icon {
+			margin-right: 10px;
+			vertical-align: baseline;
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		border-bottom: 0;
+		background: transparent;
+	}
+
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		position: relative;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		transition: all .2s ease;
+
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+		.vamtam-font(primary-font-);
+		line-height: 1em;
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		a {
+			padding: 5px 0;
+			display: inline-block;
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&.recentcomments {
+			color: @accent-color-3;
+			padding: 5px 0px;
+		}
+
+		.count {
+			color: @accent-color-3;
+			font-size: @primary-font-font-size - 2;
+		}
+	}
+
+	select {
+		max-width: 100%;
+	}
+
+	.lang_sel_click li {
+		overflow: visible;
+	}
+}
+
+/* Widgets in sidebars ------------------------------------------------------ */
+.widget-box {
+
+	&:after {
+		position: relative;
+		top: 10px;
+		display: block;
+		clear : both;
+		margin: 0 -10px;
+		height : 1px;
+		content: "";
+	}
+}
+
+.vamtam-body-sidebar,
+#header-sidebars {
+	.widget {
+		margin: 0 0 40px 0;
+		padding: 0;
+
+		.widget-title {
+			background: transparent;
+
+			> .icon {
+				margin-top: -3px;
+
+				&.shortcode {
+					color: @accent-color-7;
+				}
+			}
+
+			+ ul,
+			+ ol,
+			+ div,
+			+ form {
+				border: none;
+			}
+		}
+
+		> ul,
+		> ol,
+		> div,
+		> h4+form {
+			.widget-box;
+		}
+	}
+}
+
+/* Widgets in footer -------------------------------------------------------- */
+#footer-sidebars .widget {
+	.widget-title {
+		white-space: normal;
+	}
+}
+

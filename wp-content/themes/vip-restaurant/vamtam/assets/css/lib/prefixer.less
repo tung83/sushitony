@@ -1,0 +1,150 @@
+// flexbox
+
+.flexbox() {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.flex( @values ) {
+	-webkit-flex:  @values;
+	-ms-flex:  @values;
+	flex:  @values;
+}
+
+.order( @val ) {
+	-ms-flex-order: @val;
+	-webkit-order: @val;
+	order: @val;
+}
+
+// other
+
+.rgba-bg(@color:transparent) when (iscolor(@color)) and (alpha(@color) < 1) {
+	background-color: @color;
+}
+
+.rgba-bg(@color) when not(iscolor(@color)) {
+	.rgba-bg(rgba(0, 0, 0, 0));
+}
+
+.rgba-bg(@color:transparent) {
+	background-color: @color;
+}
+
+.bg (@url, @repeat:repeat, @position:center, @attachment:scroll, @color:transparent, @size:auto)
+when (isstring(@url)) {
+	background: url(@{url}) @repeat @position @attachment;
+	background-size: @size;
+	background-color: @color;
+}
+
+.bg (@url, @repeat:repeat, @position:center, @attachment:scroll, @color:transparent, @size:auto)
+when not (isstring(@url)) {
+	background-repeat: @repeat;
+	background-position: @position;
+	background-attachment: @attachment;
+	background-size: @size;
+	background-color: @color;
+}
+
+// Generates colors from the given basecolor
+// -----------------------------------------------------------------------------
+
+.readable-color(@bgcolor:#FFF, @treshold:70, @diff:50%) when ( iscolor(@bgcolor) ) and ( lightness(@bgcolor) >= @treshold ) and ( alpha(@bgcolor) > 0 ) {
+	color: darken(@bgcolor, @diff);
+}
+
+.readable-color(@bgcolor:#FFF, @treshold:70, @diff:50%) when ( iscolor(@bgcolor) ) and ( lightness(@bgcolor) < @treshold ) and ( alpha(@bgcolor) > 0 ) {
+	color: lighten(@bgcolor, @diff);
+}
+
+.readable-color(@bgcolor, @treshold:70, @diff:50%) when not ( iscolor( @bgcolor ) ), ( alpha(@bgcolor) = 0 ) {
+}
+
+.readable-color-hc( @bgcolor:#FFF, @treshold:70 ) when ( iscolor(@bgcolor) ) and ( lightness(@bgcolor) >= @treshold ) and ( alpha(@bgcolor) > 0 ) {
+	color: #000;
+}
+
+.readable-color-hc( @bgcolor:#FFF, @treshold:70 ) when ( iscolor(@bgcolor) ) and ( lightness(@bgcolor) < @treshold ) and ( alpha(@bgcolor) > 0 ) {
+	color: #fff;
+}
+
+.readable-color-hc( @bgcolor, @treshold:70 ) when not ( iscolor( @bgcolor ) ), ( alpha(@bgcolor) = 0 ) {
+}
+
+.readable-border(@bgcolor:#FFF, @treshold:70, @diff:50%) when ( iscolor( @bgcolor ) ) and ( lightness(@bgcolor) >= @treshold ) and ( alpha(@bgcolor) > 0 ) {
+	border-color: darken(@bgcolor, @diff);
+}
+
+.readable-border(@bgcolor:#FFF, @treshold:70, @diff:50%) when ( iscolor( @bgcolor ) ) and ( lightness(@bgcolor) < @treshold ) and ( alpha(@bgcolor) > 0 ) {
+	border-color: lighten(@bgcolor, @diff);
+}
+
+.readable-border(@bgcolor, @treshold:70, @diff:50%) when not ( iscolor( @bgcolor ) ), ( alpha(@bgcolor) = 0 ) {
+}
+
+// -----------------------------------------------------------------------------
+
+.background-color-from-page-bg(@color:@main-background-background-color, @secondcolor:@body-background-background-color) {
+	background-color: @color;
+}
+
+.background-color-from-page-bg(@color:@main-background-background-color, @secondcolor:@body-background-background-color) when not (iscolor(@color)) {
+	.background-color-from-page-bg(@secondcolor);
+}
+
+.background-color-from-page-bg(@color:@main-background-background-color, @secondcolor:@body-background-background-color) when not (iscolor(@color)) and not (iscolor(@secondcolor)) {
+	.background-color-from-page-bg(#FFF);
+}
+
+.background-origin(@arg) {
+	-webkit-background-origin: @arg;
+			background-origin: @arg;
+}
+
+/* Fonts -------------------------------------------------------------------- */
+.vamtam-font(@prefix:primary-font-) {
+	@font-weight : e("@{prefix}font-weight");
+	@font-size: e("@{prefix}font-size");
+	@line-height: e("@{prefix}line-height");
+	@font-family: e("@{prefix}font-family");
+
+	font: e(%('%s %s/%s %s', @@font-weight, @@font-size, @@line-height, @@font-family));
+}
+
+.vamtam-font-no-weight(@prefix:primary-font-) {
+	@font-size: e("@{prefix}font-size");
+	@line-height: e("@{prefix}line-height");
+	@font-family: e("@{prefix}font-family");
+
+	font: e(%('%s/%s %s', @@font-size, @@line-height, @@font-family));
+}
+
+.placeholders( @color ) when ( iscolor( @color ) ) {
+	&::-webkit-input-placeholder {
+		color: @color;
+		opacity: 0.6;
+	}
+
+	&::-moz-placeholder {
+		color: @color;
+		opacity: 0.6;
+	}
+
+	&:-ms-input-placeholder {
+		color: @color;
+		opacity: 0.6;
+	}
+}
+
+.placeholders( @color ) when not ( iscolor( @color ) ) { // empty
+}
+
+.formElementColors( @color: @main-background-background-color, @placeholder-color: @accent-color-4 ) when ( iscolor( @color ) ) {
+	@bg : lighten(@color, 8%);
+
+	background-color: @bg;
+	.readable-color(@bg);
+}
+
